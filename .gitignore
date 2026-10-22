@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# LaTeX build products (the SVGs in docs/img are kept)
+*.aux
+*.log
+*.pdf
+*.fdb_latexmk
+*.fls

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "dynsim: randomised mass-spring-damper systems with ground-truth labels"
+type: software
+version: 0.1.0
+date-released: 2026-10-22
+license: MIT
+authors:
+  - family-names: "O'Connell"
+    given-names: "Brandon John"
+    affiliation: "Dynamics Research Group, University of Sheffield"
+    orcid: "https://orcid.org/0000-0001-6042-927X"
+repository-code: "https://github.com/brandonjoconnell/dynamic-systems-simulator"
