@@ -36,7 +36,7 @@ def feature_types(kind: str) -> list:
 systems = {
     "baseline_tower": build_system("tower", 5),
     "baseline_chain": build_system("chain", 5),
-    "random_tower": sample_system(SEED, "tower", 6, feature_types=feature_types("tower")),
+    "random_tower": sample_system(SEED, "tower", 5, feature_types=feature_types("tower")),
     "random_chain": sample_system(SEED, "chain", 5, feature_types=feature_types("chain")),
 }
 

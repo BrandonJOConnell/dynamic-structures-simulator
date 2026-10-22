@@ -7,11 +7,11 @@ Build a baseline tower or chain, perturb it with randomised features (a stiffer 
 <table>
   <tr>
     <td align="center"><img src="docs/img/baseline_tower.svg" height="420" alt="Baseline 5-storey tower"></td>
-    <td align="center"><img src="docs/img/random_tower.svg" height="420" alt="Randomised tower"></td>
+    <td align="center"><img src="docs/img/random_tower.svg" height="420" alt="Randomised 5-storey tower with an appendage"></td>
   </tr>
   <tr>
     <td align="center"><sub>Baseline tower</sub></td>
-    <td align="center"><sub>Randomised tower (seed 111)</sub></td>
+    <td align="center"><sub>Randomised 5-storey tower with an appendage (seed 111)</sub></td>
   </tr>
 </table>
 
