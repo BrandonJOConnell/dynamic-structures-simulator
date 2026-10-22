@@ -40,10 +40,9 @@ dependencies = [
 [project.optional-dependencies]
 examples = ["matplotlib>=3.7"]
 
-# Uncomment and fill in once the repository exists:
-# [project.urls]
-# Homepage = "https://github.com/brandonjoconnell/dynamic-structures-simulator"
-# Issues = "https://github.com/brandonjoconnell/dynamic-structures-simulator/issues"
+[project.urls]
+Homepage = "https://github.com/brandonjoconnell/dynamic-structures-simulator"
+Issues = "https://github.com/brandonjoconnell/dynamic-structures-simulator/issues"
 
 [dependency-groups]
 dev = [
