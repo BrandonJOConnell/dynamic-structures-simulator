@@ -645,7 +645,7 @@ def _resolve_spec(spec):
 # Sampling
 # --------------------------------------------------------------------------------------
 def sample_features(
-    rng: np.random.Generator,
+    rng: int | np.random.Generator | None,
     kind: Kind,
     ndof: int,
     m: float | np.ndarray = 5,
@@ -655,8 +655,10 @@ def sample_features(
 ) -> list[Feature]:
     """
     Draw a random feature list. Specs are sampled in the order given, and their features are
-    applied in that order. See the module docstring for how to choose `feature_types`.
+    applied in that order. `rng` can be a seed or a Generator. See the module docstring for how
+    to choose `feature_types`.
     """
+    rng = np.random.default_rng(rng)  # returns Generators unchanged
     masses = np.broadcast_to(np.asarray(m, dtype=float), (ndof,)).copy()
     ctx = SamplingContext(kind, ndof, masses, k, c)
     features: list[Feature] = []

@@ -16,6 +16,7 @@ from dynsim import (
     make_mdof_chain,
     make_mdof_tower,
     make_state_matrices,
+    sample_features,
     sample_system,
 )
 
@@ -431,3 +432,9 @@ def test_describe_only_lists_what_changed():
         "connection 2: c x0.5",
         "connection 3: unchanged",
     ]
+
+
+def test_sample_features_accepts_a_seed_or_a_generator():
+    from_seed = sample_features(111, "chain", 3)
+    from_generator = sample_features(np.random.default_rng(111), "chain", 3)
+    assert from_seed == from_generator
