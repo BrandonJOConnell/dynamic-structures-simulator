@@ -68,6 +68,23 @@ render_svg(rs, "chain_111.svg")           # the diagram above
 
 Seeds reproduce the same system within one numpy version. numpy does not promise identical streams across versions, so keep `rs.features` if you need exact reproducibility later.
 
+## Changing the baseline
+
+The baseline structure is set by `m`, `k` and `c` (defaults `5`, `2500`, `2`). Pass them to `sample_system` or `build_system`:
+
+```python
+sample_system(42, "tower", 5, m=10, k=4000, c=5)             # heavier, stiffer, more damped
+sample_system(42, "chain", 5, m=[10, 8, 6, 4, 2])            # a different mass on each floor
+build_system("tower", 5, m=10, k=4000, c=5, features=[])     # same baseline, no randomness
+make_mdof_tower(5, m=10, k=4000, c=5)                        # matrices only, no feature bookkeeping
+```
+
+- `m` is a single value or one value per floor. `k` and `c` are single values, shared by every connection.
+- In a **tower**, each storey has two spring-damper columns, so every connection has stiffness `2k` and damping `2c`. A **chain** connection has `k` and `c`, plus one extra connection from the top floor to ground.
+- Random changes are relative to this baseline: the factor ranges in `ScaleConnectionSpec`, `ScaleMassSpec` and `AppendageSpec`, and the ground spring and damper ranges (× baseline connection stiffness and damping), all follow your `m`, `k` and `c`.
+- `feature_types=[]` gives the unmodified baseline, which is a quick way to check your values.
+- Appendage degrees of freedom come after the baseline ones: `rs.ndof` is the baseline count and `rs.system.ndof` includes appendages.
+
 ## Choosing what is randomised
 
 Pass `feature_types` to say which kinds of change to include and how many. Use a name for default settings, or a spec object to customise:
